@@ -295,70 +295,63 @@ header {
   background: #333;
 }
 
-/* ==========================
-   RESPONSIVIDADE CELULAR REAL
-========================== */
+/* RESPONSIVIDADE PARA CELULAR */
 @media (max-width: 768px) {
 
-  /* Banner menor */
+  /* 🔥 DIMINUIR ALTURA DO BANNER */
   .hero {
-    height: 250px !important;
+    height: 45vh;
   }
 
   .hero-content h1 {
-    font-size: 2rem !important;
+    font-size: 1.8rem;
   }
 
   .hero-content p {
-    font-size: 1rem !important;
+    font-size: 1rem;
   }
 
   .logo {
-    width: 100px !important;
-    height: 100px !important;
+    width: 100px;
+    height: 100px;
   }
 
-  /* Cards empilhados e centralizados */
+  /* 🔥 CARDS EMPILHADOS E MAIORES */
   .services-container {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    gap: 20px !important;
+    flex-direction: column;
+    align-items: center;
   }
 
   .service {
-    width: 95% !important;     /* ocupa quase toda a tela */
-    max-width: 280px !important;
-    height: auto !important;    /* deixa a altura automática */
+    width: 90%;
+    max-width: 350px;
   }
 
   .service img {
-    height: 180px !important;   /* mantém proporção da imagem */
+    height: 200px;
   }
 
-  /* Botão WhatsApp maior */
-  .whatsapp-float {
-    width: 80px !important;
-    height: 80px !important;
-    background-size: 40px 40px !important;
-    bottom: 20px !important;
-    right: 20px !important;
+  /* 🔥 BOTÕES MAIORES */
+  .service button {
+    padding: 14px;
+    font-size: 16px;
   }
 
-  /* Ícone do carrinho maior */
+  /* 🔥 CARRINHO MAIOR */
   .cart-icon {
-    font-size: 26px !important;
-    padding: 15px !important;
+    padding: 12px 16px;
+    font-size: 18px;
   }
 
   #cart-count {
-    font-size: 14px !important;
-    padding: 5px 9px !important;
+    font-size: 14px;
+    padding: 6px 10px;
   }
 
-  /* Botões dentro do serviço maior no celular */
-  .service button {
-    padding: 12px !important;
-    font-size: 1rem !important;
+  /* 🔥 WHATSAPP MAIOR */
+  .whatsapp-float {
+    width: 70px;
+    height: 70px;
+    background-size: 35px 35px;
   }
 }
