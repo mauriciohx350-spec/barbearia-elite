@@ -188,7 +188,7 @@ header {
     background-size: 40px;
   }
 
-  cart-modal {
+  .cart-modal {
   position: fixed;
   top: 0;
   left: 0;
