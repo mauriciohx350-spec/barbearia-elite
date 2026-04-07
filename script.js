@@ -1,5 +1,6 @@
 let cart = [];
 
+/* ADICIONAR AO CARRINHO */
 function addToCart(item) {
   cart.push(item);
   updateCart();
@@ -11,44 +12,36 @@ function addToCart(item) {
     count.classList.remove("bump");
   }, 200);
 }
+
+/* ATUALIZA CONTADOR */
 function updateCart() {
   document.getElementById("cart-count").innerText = cart.length;
 }
 
+/* ABRIR CARRINHO */
 function openCart() {
   const modal = document.getElementById("cartModal");
   const content = document.querySelector('.site-content');
 
-  modal.style.display = "flex";
-  modal.style.opacity = 0;
+  modal.classList.add("active");
   renderCart();
 
-  // Bloqueia scroll e aplica blur em todo o site
   document.body.style.overflow = "hidden";
   content.classList.add('blur-background');
-
-  setTimeout(() => {
-    modal.style.transition = "opacity 0.3s";
-    modal.style.opacity = 1;
-  }, 10);
 }
 
+/* FECHAR CARRINHO */
 function closeCart() {
   const modal = document.getElementById("cartModal");
   const content = document.querySelector('.site-content');
 
-  modal.style.transition = "opacity 0.3s";
-  modal.style.opacity = 0;
+  modal.classList.remove("active");
 
-  // Remove blur e desbloqueia scroll
   content.classList.remove('blur-background');
   document.body.style.overflow = "auto";
-
-  setTimeout(() => {
-    modal.style.display = "none";
-  }, 300);
 }
 
+/* RENDERIZA ITENS */
 function renderCart() {
   let list = document.getElementById("cart-items");
   list.innerHTML = "";
@@ -63,12 +56,14 @@ function renderCart() {
   });
 }
 
+/* REMOVER ITEM */
 function removeItem(index) {
   cart.splice(index, 1);
   updateCart();
   renderCart();
 }
 
+/* ENVIAR PARA WHATSAPP */
 function sendToWhatsApp() {
   if (cart.length === 0) {
     alert("Carrinho vazio!");
@@ -81,7 +76,7 @@ function sendToWhatsApp() {
     message += "- " + item + "\n";
   });
 
-  let phone = "5541984701212"; 
+  let phone = "5541984701212";
   let url = "https://wa.me/" + phone + "?text=" + encodeURIComponent(message);
 
   window.open(url, "_blank");
